@@ -41,20 +41,12 @@ requires = []
 
 test_requirements = ['pytest>=2.8.0', 'pytest-cov']
 
-with open('strainer/__init__.py', 'r') as fd:
-    version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
-                        fd.read(), re.MULTILINE).group(1)
-
-if not version:
-    raise RuntimeError('Cannot find version information')
-
 with open('README.rst', 'r', 'utf-8') as f:
     readme = f.read()
 
 
 setup(
     name='routes',
-    version=version,
     description='Flask like routes for django',
     long_description=readme,
     author='Alex Kessinger',
